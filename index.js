@@ -11,6 +11,21 @@ function calculateMoney(ticketSale) {
 }
 
 
+
+function checkName(name) {
+    if (typeof name !== "string") {
+        return "invalid";
+    }
+    let lastCharecter = name.charAt((name.length - 1));
+    lastCharecter = lastCharecter.toLowerCase();
+    if (lastCharecter === 'a' || lastCharecter === 'y' || lastCharecter === 'i' || lastCharecter === 'e' || lastCharecter === 'o' || lastCharecter === 'u' || lastCharecter === 'w') {
+        return "Good Name"
+    }
+    return "Bad Name";
+}
+
+
 /* It must be deleted bofore submit*/
 var calculateT = calculateMoney(10)
 console.log(calculateT);
+console.log(checkName(['Rashed']))
