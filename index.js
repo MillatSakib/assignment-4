@@ -54,19 +54,24 @@ function password(obj) {
     return generatedPass;
 }
 
-
-/* It must be deleted bofore submit*/
-// var calculateT = calculateMoney(10)
-// console.log(calculateT);
-// console.log(checkName(['Rashed']));
-// console.log(deleteInvalids({ num: [1, 2, 3] }));
-// console.log(password({ name: "sakib", birthYear: 1545, siteName: "google" }));
-// let abc = NaN;
-// // console.log(String(abc) === 'NaN');
-// if (abc.toString() === 'NaN') {
-//     console.log('not a Number');
-// }
-
-
-
+function monthlySavings(arr, livingCost) {
+    if ((!(Array.isArray(arr))) || (typeof livingCost !== 'number')) {
+        return "invalid input";
+    }
+    let totalEarn = 0;
+    let savings = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 3000) {
+            totalEarn += arr[i] - (arr[i] * 20) / 100;
+        }
+        else {
+            totalEarn += arr[i];
+        }
+    }
+    savings = totalEarn - livingCost;
+    if (savings < 0) {
+        return "earn more";
+    }
+    return savings;
+}
 
