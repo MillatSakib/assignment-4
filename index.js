@@ -24,8 +24,31 @@ function checkName(name) {
     return "Bad Name";
 }
 
+function deleteInvalids(array) {
+    if (!(Array.isArray(array))) {
+        return "Invalid array";
+    }
+    let antiVirusArray = [];
+    for (var i = 0; i < 10; i++) {
+        if ((typeof array[i] === 'number') && (array[i] !== NaN) && array[i].toString() !== 'NaN') {
+            antiVirusArray.push(array[i]);
+        }
+    }
+    return antiVirusArray;
+}
+
 
 /* It must be deleted bofore submit*/
 var calculateT = calculateMoney(10)
 console.log(calculateT);
-console.log(checkName(['Rashed']))
+console.log(checkName(['Rashed']));
+console.log(deleteInvalids({ num: [1, 2, 3] }));
+// let abc = NaN;
+// // console.log(String(abc) === 'NaN');
+// if (abc.toString() === 'NaN') {
+//     console.log('not a Number');
+// }
+
+
+
+
